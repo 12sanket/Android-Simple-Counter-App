@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">Simple Counter</string>
+
+    <string name="start_count">0</string>
+    <string name="minus_button">-</string>
+    <string name="plus_button">+</string>
+    <string name="counter_name_hint">What are you counting ?</string>
+
+    <string name="saved_counts_activity">Saved Counts</string>
+    <string name="id">No.</string>
+    <string name="name">Name</string>
+    <string name="count">Count</string>
+
+    <string name="Settings_Activity">Settings</string>
+    <string name="Delete_dialog">Delete Saved Counts</string>
+    <string name="Version">V-1.0</string>
+    <string name="empty_name">Unknown</string>
+
+    <integer name="slide_animation_duration">400</integer>
+</resources>
