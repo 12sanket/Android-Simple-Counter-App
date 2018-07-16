@@ -13,8 +13,13 @@
 
     <string name="Settings_Activity">Settings</string>
     <string name="Delete_dialog">Delete Saved Counts</string>
+    <string name="source_code">Source Code</string>
+    <string name="rate">Rate on Play Store</string>
+    <string name="apps">My Other Apps</string>
     <string name="Version">V-1.0</string>
     <string name="empty_name">Unknown</string>
+
+    <string name="code_url">https://goo.gl/XoEUQQ</string>
 
     <integer name="slide_animation_duration">400</integer>
 </resources>

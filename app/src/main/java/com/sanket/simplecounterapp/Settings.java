@@ -3,8 +3,10 @@ package com.sanket.simplecounterapp;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.net.Uri;
 import android.os.Vibrator;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -28,6 +30,7 @@ public class Settings extends AppCompatActivity {
     android.os.Vibrator Vibrator;
     SQLiteDatabase sqLiteDatabase;
     ImageView cancel;
+    TextView rate,source_code,other_apps;
 
 
     @Override
@@ -38,6 +41,9 @@ public class Settings extends AppCompatActivity {
         delete_data = findViewById(R.id.delete_data);
         myDb= new DatabaseHelper(getApplicationContext());
         cancel = findViewById(R.id.cancel);
+        rate = findViewById(R.id.rate);
+        source_code = findViewById(R.id.source_code);
+        other_apps = findViewById(R.id.other_apps);
         sqLiteDatabase = myDb.getWritableDatabase();
         cursor = myDb.getAllData(sqLiteDatabase);
         Vibrator = (Vibrator)getSystemService(Settings.VIBRATOR_SERVICE);
@@ -86,6 +92,41 @@ public class Settings extends AppCompatActivity {
             }
         });
 
+        rate.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Vibrator.vibrate(25);
+
+                startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("market://details?id=PackageName")));
+
+
+            }
+        });
+
+        source_code.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Vibrator.vibrate(25);
+
+                Intent intent = new Intent();
+                intent.setAction(Intent.ACTION_VIEW);
+                intent.addCategory(Intent.CATEGORY_BROWSABLE);
+                intent.setData(Uri.parse("https://goo.gl/XoEUQQ"));
+                startActivity(intent);
+
+            }
+        });
+
+        other_apps.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Vibrator.vibrate(25);
+
+                startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://play.google.com/store/apps/dev?id=7976342366781866089")));
+
+
+            }
+        });
 
     }
 
